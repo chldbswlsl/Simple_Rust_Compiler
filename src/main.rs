@@ -6,6 +6,7 @@ use lexer::{Lexer, Token}; // Lexer 구조체와 Token 열거형을 사용
 use parser::{Parser, Stmt, Expr}; // Parser 구조체, AST 문장/표현식 타입 사용
 use codegen::CodeGen; // CodeGen 구조체 사용
 
+// 최종본
 fn main() {
     // 테스트용 소스 코드 문자열
     let src = "
