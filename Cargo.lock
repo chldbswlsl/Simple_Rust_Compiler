@@ -3,5 +3,9 @@
 version = 4
 
 [[package]]
+<<<<<<< HEAD
 name = "hello_rust"
+=======
+name = "rust_to_machine_lang"
+>>>>>>> 000c4ec4fba813fd1369c4558488d958d4c69558
 version = "0.1.0"

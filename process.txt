@@ -1,0 +1,8 @@
+lexel.rs 에서 토큰 변환
+
+
+parser.rs 에서 AST로 변환
+
+codegen.rs 에서 기계어 변환
+
+main.rs rust 파일 받고 출력 및 저장

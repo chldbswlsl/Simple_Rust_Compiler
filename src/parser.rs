@@ -1,5 +1,6 @@
 // ======================= 안승우 파트 =======================
 
+use crate::lexer::Token;
 #[derive(Debug)]
 
 // AST 표현식 정의
@@ -27,8 +28,8 @@ pub struct Parser<'a> {
 
 impl<'a> Parser<'a> {
     // 새로운 파서 생성
-    pub fn new(token: &'a [Token]) -> Self {
-        Self { token, pos: 0 }      //pos = 0부터 시작
+    pub fn new(tokens: &'a [Token]) -> Self {
+        Self { tokens, pos: 0 }      //pos = 0부터 시작
     }
 
     //현재 토큰 가져오기
@@ -100,7 +101,7 @@ impl<'a> Parser<'a> {
                 _ => "",
             }.to_string();
             self.next();                                                                         // 연산자 토큰 소비
-            let right = parse_expr();                                                            // 오른쪽 표현식 파싱
+            let right = self.parse_expr();                                                            // 오른쪽 표현식 파싱
 
             left = Expr::BinaryOp(Box::new(left), op, Box::new(right));                          // AST 갱신
         }
@@ -125,7 +126,7 @@ impl<'a> Parser<'a> {
         self.next();                            // 'while' 토큰 소비
         let cond = self.parse_expr();           // 조건식 파싱
         let body = self.parse_block();          // 본문 블록 파싱
-        Stmt::While(copnd, body)                // AST 반환
+        Stmt::While(cond, body)                // AST 반환
     }
 
     // 중괄호 블록 { ... } 파싱

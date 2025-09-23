@@ -17,7 +17,7 @@ impl CodeGen {
 
   fn emit<S: AsRef<str>>(&mut self, s: S) {
     self.code.push(s.as_ref().to_string()); // 문자를 String으로 변환
-    /// 문자열(코드)을 CodeGen의 내부 코드 저장소에 넣는 역할
+    // 문자열(코드)을 CodeGen의 내부 코드 저장소에 넣는 역할
   }
 
   /// 레이블 이름 만들기
