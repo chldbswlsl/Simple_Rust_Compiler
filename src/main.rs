@@ -7,7 +7,6 @@ use parser::{Parser, Stmt, Expr}; // Parser 구조체, AST 문장/표현식 타�
 use codegen::CodeGen; // CodeGen 구조체 사용
 
 fn main() {
-    // 테스트용 소스 코드 문자열
     let src = "
         let x = 10 + 20;
         if x > 15 {
